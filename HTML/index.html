@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Exercise 1 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+
+    <!-- Exercise 3 -->
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+        }
+
+        #welcomeBanner{
+            background-color: royalblue;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation Section -->
+
+<header>
+
+    <h1 style="color:red;">
+        Local Community Event Portal
+    </h1>
+
+    <!-- Exercise 2 -->
+
+    <nav>
+
+        <a href="#home">Home</a> |
+
+        <a href="#events">Events</a> |
+
+        <a href="#contact">Contact</a> |
+
+        <a href="help.html" target="_blank">
+            Help
+        </a>
+
+    </nav>
+
+</header>
+
+<hr>
+
+<!-- Exercise 3 -->
+
+<section id="home">
+
+    <h2>Welcome Banner</h2>
+
+    <div id="welcomeBanner">
+
+        Welcome Resident!
+
+        <span style="color:yellow;font-weight:bold;">
+            Free Registration Today
+        </span>
+
+    </div>
+
+    <p>
+        Register now and enjoy community events.
+    </p>
+
+</section>
+
+<hr>
+
+<!-- Exercise 4 -->
+
+<section id="events">
+
+    <h2>Event Gallery</h2>
+
+    <table border="1" width="100%">
+
+        <caption>
+            Previous Community Events
+        </caption>
+
+        <tr>
+
+            <td>
+
+                <img src="music.jpg"
+                alt="Music Event"
+                title="Music Event"
+                width="180"
+                height="120">
+
+                <p>Music Event</p>
+
+            </td>
+
+            <td>
+
+                <img src="food fest.jpg"
+                alt="Food Festival"
+                title="Food Festival"
+                width="180"
+                height="120">
+
+                <p>Food Festival</p>
+
+            </td>
+
+            <td>
+
+                <img src="sports day.jpg"
+                alt="Sports Day"
+                title="Sports Day"
+                width="180"
+                height="120">
+
+                <p>Sports Day</p>
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+
+                <img src="marathon.jpg"
+                alt="Marathon"
+                title="Marathon"
+                width="180"
+                height="120">
+
+                <p>Marathon</p>
+
+            </td>
+
+            <td>
+
+                <img src="art show.webp"
+                alt="Art Show"
+                title="Art Show"
+                width="180"
+                height="120">
+
+                <p>Art Show</p>
+
+            </td>
+
+            <td>
+
+                <img src="plantation drive.jpg"
+                alt="Plantation Drive"
+                title="Plantation Drive"
+                width="180"
+                height="120">
+
+                <p>Plantation Drive</p>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</section>
+
+<hr>
+
+<!-- Exercise 5 -->
+
+<section>
+
+    <h2>Event Registration Form</h2>
+
+    <form>
+
+        <input type="text"
+        placeholder="Enter Name"
+        required
+        autofocus>
+
+        <br><br>
+
+        <input type="email"
+        placeholder="Enter Email"
+        required>
+
+        <br><br>
+
+        <input type="date"
+        required>
+
+        <br><br>
+
+        <select id="eventType"
+        onchange="showFee()">
+
+            <option value="">
+                Select Event
+            </option>
+
+            <option value="100">
+                Music Event
+            </option>
+
+            <option value="150">
+                Food Festival
+            </option>
+
+            <option value="200">
+                Marathon
+            </option>
+
+            <option value="250">
+                Plantation Drive
+            </option>
+
+            <option value="300">
+                Art Show
+            </option>
+
+            <option value="350">
+                Sports Day
+            </option>
+
+        </select>
+
+        <p id="fee"></p>
+
+        <textarea
+        id="feedback"
+        placeholder="Enter Message"
+        onkeyup="countCharacters()">
+        </textarea>
+
+        <p>
+            Characters :
+            <span id="count">0</span>
+        </p>
+
+        <button
+        type="button"
+        onclick="registerUser()">
+
+            Register
+
+        </button>
+
+        <br><br>
+
+        <output id="outputMsg"></output>
+
+    </form>
+
+</section>
+
+<hr>
+
+<!-- Exercise 6 -->
+
+<section>
+
+    <h2>Event Handling</h2>
+
+    <input type="text"
+    id="phone"
+    placeholder="Phone Number"
+    onblur="validatePhone()">
+
+    <br><br>
+
+    <img src="event.jpeg"
+    width="250"
+    height="150"
+    id="zoomImage"
+    ondblclick="zoomImage()">
+
+    <p>Double click image to enlarge.</p>
+
+</section>
+
+<hr>
+
+<!-- Exercise 7 -->
+
+<section>
+
+    <h2>Promo Video</h2>
+
+    <video width="400"
+    controls
+    oncanplay="videoReady()">
+
+        <source src="promo.mp4"
+        type="video/mp4">
+
+    </video>
+
+    <p id="videoMsg"></p>
+
+</section>
+
+<hr>
+
+<!-- Exercise 8 -->
+
+<section>
+
+    <h2>User Preferences</h2>
+
+    <button onclick="clearStorage()">
+        Clear Preferences
+    </button>
+
+</section>
+
+<hr>
+
+<!-- Exercise 9 -->
+
+<section>
+
+    <h2>Find Nearby Events</h2>
+
+    <button onclick="getLocation()">
+        Find Nearby Events
+    </button>
+
+    <p id="location"></p>
+
+</section>
+
+<hr>
+
+<!-- Exercise 10 -->
+
+<section>
+
+    <h2>Debugging Instructions</h2>
+
+    <ul>
+
+        <li>Press F12 to open DevTools.</li>
+
+        <li>Use Inspect Element.</li>
+
+        <li>Check Console for messages.</li>
+
+        <li>Use Sources tab for breakpoints.</li>
+
+    </ul>
+
+</section>
+
+<hr>
+
+<!-- Community News -->
+
+<section>
+
+    <h2>Community News</h2>
+
+    <p>
+
+        The City Council has announced several exciting community
+        events this month. Residents are encouraged to participate
+        in the annual Food Festival, Sports Day and Tree Plantation Drive.
+
+        Registration is open through the Community Event Portal.
+        Community members are invited to volunteer and help make
+        these events successful and enjoyable.
+
+    </p>
+
+</section>
+
+<hr>
+
+<!-- Footer -->
+
+<footer id="contact">
+
+    <h3>Contact Us</h3>
+
+    <p>
+        community@gmail.com
+    </p>
+
+</footer>
+
+<script>
+
+function validatePhone(){
+
+    let phone =
+    document.getElementById("phone").value;
+
+    if(phone.length != 10){
+
+        alert("Enter valid phone number");
+    }
+}
+
+function showFee(){
+
+    let fee =
+    document.getElementById("eventType").value;
+
+    document.getElementById("fee").innerHTML =
+    "Event Fee : ₹" + fee;
+
+    localStorage.setItem("event",fee);
+}
+
+function registerUser(){
+
+    document.getElementById("outputMsg").value =
+    "Registration Successful";
+}
+
+function countCharacters(){
+
+    let text =
+    document.getElementById("feedback").value;
+
+    document.getElementById("count").innerHTML =
+    text.length;
+}
+
+function zoomImage(){
+
+    document.getElementById("zoomImage").width = 350;
+}
+
+function videoReady(){
+
+    document.getElementById("videoMsg").innerHTML =
+    "Video Ready To Play";
+}
+
+window.onload = function(){
+
+    let saved =
+    localStorage.getItem("event");
+
+    if(saved){
+
+        document.getElementById("eventType").value =
+        saved;
+    }
+}
+
+function clearStorage(){
+
+    localStorage.clear();
+    sessionStorage.clear();
+
+    alert("Preferences Cleared");
+}
+
+function getLocation(){
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position){
+
+            document.getElementById("location").innerHTML =
+
+            "Latitude : " +
+            position.coords.latitude +
+
+            "<br>Longitude : " +
+            position.coords.longitude;
+        },
+
+        function(){
+
+            alert("Location Permission Denied");
+        },
+
+        {
+            enableHighAccuracy:true,
+            timeout:5000
+        }
+    );
+}
+
+window.onbeforeunload = function(){
+
+    return "Leave page?";
+}
+
+</script>
+
+</body>
+</html>
