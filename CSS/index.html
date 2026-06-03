@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Local Community Event Portal</title>
+
+    
+    <style>
+        #welcomeBanner{
+            background: royalblue;
+            color:white;
+            padding:15px;
+            text-align:center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+<header id="mainHeader">
+
+    <h1 style="color:red;">
+        Local Community Event Portal
+    </h1>
+
+   
+    <nav>
+
+        <ul>
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#events">Events</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="help.html" target="_blank">
+                    Help
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+    
+    <section class="exercise">
+
+        <h2> Welcome Banner</h2>
+
+        <div id="welcomeBanner">
+
+            Welcome Resident !
+
+            <span style="color:yellow;font-weight:bold;">
+                Free Registration Today
+            </span>
+
+        </div>
+
+        <p class="highlight">
+            Register now and enjoy community events.
+        </p>
+
+    </section>
+
+    
+
+    <section id="events" class="exercise">
+
+        <h2>Image Gallery</h2>
+
+        <table>
+
+            <caption>
+                Previous Community Events
+            </caption>
+
+            <tr>
+
+                <td>
+                    <img src="music.jpg"
+                    alt="Music Event"
+                    title="Music Event"
+                    class="gallery">
+
+                    <p>Music Event</p>
+                </td>
+
+                <td>
+                    <img src="food fest.jpg"
+                    alt="Food Festival"
+                    title="Food Festival"
+                    class="gallery">
+
+                    <p>Food Festival</p>
+                </td>
+
+                <td>
+                    <img src="sports day.jpg"
+                    alt="Sports Day"
+                    title="Sports Day"
+                    class="gallery">
+
+                    <p>Sports Day</p>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <img src="marathon.jpg"
+                    alt="Marathon"
+                    title="Marathon"
+                    class="gallery">
+
+                    <p>Marathon</p>
+                </td>
+
+                <td>
+                    <img src="art show.webp"
+                    alt="Art Show"
+                    title="Art Show"
+                    class="gallery">
+
+                    <p>Art Show</p>
+                </td>
+
+                <td>
+                    <img src="plantation drive.jpg"
+                    alt="Plantation Drive"
+                    title="Plantation Drive"
+                    class="gallery">
+
+                    <p>Plantation Drive</p>
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    
+
+    <section class="exercise">
+
+        <h2> Registration Form</h2>
+
+        <form>
+
+            <input type="text"
+            placeholder="Enter Name"
+            required
+            autofocus>
+
+            <input type="email"
+            placeholder="Enter Email"
+            required>
+
+            <input type="date"
+            required>
+
+            <select id="eventType"
+            onchange="showFee()">
+
+                <option>Select Event</option>
+
+                <option value="100">
+                    Music Event
+                </option>
+
+                <option value="150">
+                    Food Festival
+                </option>
+
+                <option value="200">
+                    Marathon
+                </option>
+                 <option value="250">
+                     Plantation Drive
+                </option>
+                <option value="300">
+                    Art show
+                </option>
+                <option value="350">
+                    Sports day
+                </option>
+
+
+
+            </select>
+
+            <p id="fee"></p>
+
+            <textarea
+            id="feedback"
+            placeholder="Enter Message"
+            onkeyup="countCharacters()">
+            </textarea>
+
+            <p>
+                Characters:
+                <span id="count">0</span>
+            </p>
+
+            <button type="button"
+            onclick="registerUser()">
+
+                Register
+
+            </button>
+
+            <output id="outputMsg"></output>
+
+        </form>
+
+    </section>
+
+    
+
+    <section class="exercise">
+
+        <h2> Events Handling</h2>
+
+        <input type="text"
+        id="phone"
+        placeholder="Phone Number"
+        onblur="validatePhone()">
+
+        <br><br>
+
+        <img src="event.jpeg"
+        width="200"
+        id="zoomImage"
+        ondblclick="zoomImage()">
+
+    </section>
+
+   
+
+    <section class="exercise">
+
+        <h2> Promo Video</h2>
+
+        <video width="400"
+        controls
+        oncanplay="videoReady()">
+
+            <source src="promo.mp4"
+            type="video/mp4">
+
+        </video>
+
+        <p id="videoMsg"></p>
+
+    </section>
+
+    
+
+    <section class="exercise">
+
+        <h2> User Preferences</h2>
+
+        <button onclick="clearStorage()">
+            Clear Preferences
+        </button>
+
+    </section>
+
+    
+
+    <section class="exercise">
+
+        <h2> Geolocation</h2>
+
+        <button onclick="getLocation()">
+            Find Nearby Events
+        </button>
+
+        <p id="location"></p>
+
+    </section>
+
+    
+
+    
+
+<section class="news">
+
+    The City Council has announced several exciting community events this month.
+    Residents are encouraged to participate in the annual Food Festival, Sports Day,
+    and Tree Plantation Drive. These events aim to bring people together and promote
+    a healthy and active lifestyle.
+
+    The Food Festival will feature local restaurants and home chefs showcasing a
+    variety of dishes. Sports Day includes games and competitions for all age groups.
+    The Tree Plantation Drive focuses on environmental awareness and creating greener
+    public spaces.
+
+    Registration for all events is open through the Community Event Portal.
+    Participants can check event schedules, locations, and updates online.
+    Community members are invited to volunteer and contribute to making these
+    events successful and enjoyable for everyone.
+
+</section>
+
+</main>
+
+
+
+<footer id="contact">
+
+    <h3>Contact Us</h3>
+
+    <p>
+        community@gmail.com
+    </p>
+
+</footer>
+
+<script>
+
+function validatePhone(){
+
+    let phone =
+    document.getElementById("phone").value;
+
+    if(phone.length != 10){
+
+        alert("Enter valid phone number");
+    }
+}
+
+function showFee(){
+
+    let fee =
+    document.getElementById("eventType").value;
+
+    document.getElementById("fee").innerHTML =
+    "Event Fee : ₹" + fee;
+
+    localStorage.setItem("event",fee);
+}
+
+function registerUser(){
+
+    document.getElementById("outputMsg").value =
+    "Registration Successful";
+}
+
+function countCharacters(){
+
+    let text =
+    document.getElementById("feedback").value;
+
+    document.getElementById("count").innerHTML =
+    text.length;
+}
+
+function zoomImage(){
+
+    document.getElementById("zoomImage").width=300;
+}
+
+function videoReady(){
+
+    document.getElementById("videoMsg").innerHTML =
+    "Video Ready To Play";
+}
+
+window.onload=function(){
+
+    let saved =
+    localStorage.getItem("event");
+
+    if(saved){
+
+        document.getElementById("eventType").value =
+        saved;
+    }
+}
+
+function clearStorage(){
+
+    localStorage.clear();
+    sessionStorage.clear();
+
+    alert("Preferences Cleared");
+}
+
+function getLocation(){
+
+navigator.geolocation.getCurrentPosition(
+
+function(position){
+
+document.getElementById("location").innerHTML=
+
+"Latitude : " +
+position.coords.latitude +
+
+"<br>Longitude : " +
+position.coords.longitude;
+
+},
+
+function(){
+
+alert("Location Permission Denied");
+
+},
+
+{
+enableHighAccuracy:true,
+timeout:5000
+}
+);
+}
+
+window.onbeforeunload=function(){
+
+return "Leave page?";
+}
+
+console.log("Portal Loaded");
+
+</script>
+
+</body>
+</html>
