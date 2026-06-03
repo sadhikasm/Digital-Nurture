@@ -1,0 +1,366 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Local Community Event Portal</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Local Community Event Portal</h1>
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#events">Events</a>
+
+        <a href="#register">Register</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</header>
+
+
+<!-- Welcome Banner -->
+
+<section id="home">
+
+    <div id="welcomeBanner">
+
+        Welcome Resident !
+
+        <span>
+            Free Registration Today
+        </span>
+
+    </div>
+
+    <p class="highlight">
+        Join exciting community events.
+    </p>
+
+</section>
+
+
+<!-- Search & Filter -->
+
+<section>
+
+    <h2>Search Events</h2>
+
+    <input type="text"
+           id="searchBox"
+           placeholder="Search Event">
+
+    <select id="categoryFilter">
+
+        <option value="All">
+            All Categories
+        </option>
+
+        <option value="Music">
+            Music
+        </option>
+
+        <option value="Food">
+            Food
+        </option>
+
+        <option value="Sports">
+            Sports
+        </option>
+
+        <option value="Art">
+            Art
+        </option>
+
+    </select>
+
+</section>
+
+
+<!-- Dynamic Events -->
+
+<section id="events">
+
+    <h2>Upcoming Events</h2>
+
+    <div id="eventList">
+
+    </div>
+
+</section>
+
+
+<!-- Image Gallery -->
+
+<section>
+
+    <h2>Event Gallery</h2>
+
+    <table>
+
+        <tr>
+
+            <td>
+
+                <img src="music.jpg"
+                     class="gallery"
+                     alt="Music Event">
+
+                <p>Music Event</p>
+
+            </td>
+
+            <td>
+
+                <img src="food fest.jpg"
+                     class="gallery"
+                     alt="Food Festival">
+
+                <p>Food Festival</p>
+
+            </td>
+
+            <td>
+
+                <img src="sports day.jpg"
+                     class="gallery"
+                     alt="Sports Day">
+
+                <p>Sports Day</p>
+
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+
+                <img src="marathon.jpg"
+                     class="gallery"
+                     alt="Marathon">
+
+                <p>Marathon</p>
+
+            </td>
+
+            <td>
+
+                <img src="art show.webp"
+                     class="gallery"
+                     alt="Art Show">
+
+                <p>Art Show</p>
+
+            </td>
+
+            <td>
+
+                <img src="plantation drive.jpg"
+                     class="gallery"
+                     alt="Plantation Drive">
+
+                <p>Plantation Drive</p>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</section>
+
+
+<!-- Registration Form -->
+
+<section id="register">
+
+    <h2>Register For Event</h2>
+
+    <form id="registerForm">
+
+        <input type="text"
+               name="name"
+               placeholder="Enter Name"
+               required
+               autofocus>
+
+        <input type="email"
+               name="email"
+               placeholder="Enter Email"
+               required>
+
+        <input type="date"
+               name="date"
+               required>
+
+        <select id="eventType">
+
+            <option value="">
+                Select Event
+            </option>
+
+            <option value="Music">
+                Music Event
+            </option>
+
+            <option value="Food">
+                Food Festival
+            </option>
+
+            <option value="Sports">
+                Marathon
+            </option>
+
+            <option value="Art">
+                Art Show
+            </option>
+
+        </select>
+
+        <p id="fee"></p>
+
+        <input type="text"
+               id="phone"
+               placeholder="Phone Number">
+
+        <span id="phoneError">
+
+        </span>
+
+        <textarea id="feedback"
+                  placeholder="Enter Feedback">
+
+        </textarea>
+
+        <p>
+            Characters :
+            <span id="count">
+                0
+            </span>
+        </p>
+
+        <button id="registerBtn"
+                type="submit">
+
+            Register
+
+        </button>
+
+        <output id="outputMsg">
+
+        </output>
+
+    </form>
+
+</section>
+
+
+<!-- Event Handling -->
+
+<section>
+
+    <h2>Interactive Image</h2>
+
+    <img src="event.jpeg"
+         id="zoomImage"
+         width="200">
+
+</section>
+
+
+<!-- Video -->
+
+<section>
+
+    <h2>Promo Video</h2>
+
+    <video width="400"
+           controls
+           id="promoVideo">
+
+        <source src="promo.mp4"
+                type="video/mp4">
+
+    </video>
+
+    <p id="videoMsg"></p>
+
+</section>
+
+
+<!-- User Preferences -->
+
+<section>
+
+    <h2>User Preferences</h2>
+
+    <button id="saveBtn">
+        Save Preference
+    </button>
+
+    <button id="clearBtn">
+        Clear Preference
+    </button>
+
+</section>
+
+
+<!-- Geolocation -->
+
+<section>
+
+    <h2>Find Nearby Events</h2>
+
+    <button id="locationBtn">
+
+        Find Nearby Events
+
+    </button>
+
+    <p id="location"></p>
+
+</section>
+
+
+<!-- Loading Spinner -->
+
+<div id="loading">
+
+    Loading Events...
+
+</div>
+
+
+<footer id="contact">
+
+    <h3>Contact Us</h3>
+
+    <p>
+        community@gmail.com
+    </p>
+
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
+```
